@@ -29,39 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EADBDF] shadow-xs">
       
       {/* Top micro-bar for trust & direct hotline */}
-      <div className="bg-[#4A0E35] text-white text-[11px] py-1.5 px-4 sm:px-8 border-b border-[#5A123E]">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2 sm:gap-4 truncate">
-            <span className="flex items-center gap-1 text-[#FFA000] font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>Ministry of Tourism Recognized Operator</span>
-            </span>
-            <span className="hidden md:inline text-white/50">•</span>
-            <span className="hidden md:inline text-white/80">
-              Delhi • Agra • Rajasthan • Uttarakhand • Himachal • Luxury Taxi Fleet
-            </span>
-          </div>
-
-          <div className="flex items-center gap-4 shrink-0">
-            <a
-              href="tel:+919760402549"
-              className="flex items-center gap-1 text-white/90 hover:text-white transition-colors"
-            >
-              <Phone className="w-3 h-3 text-[#F05A28]" />
-              <span className="font-semibold">+91 97604 02549 </span>
-            </a>
-            <a
-              href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20would%20like%20to%20inquire%20about%20tour%20packages%20and%20taxi%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-semibold"
-            >
-              <MessageSquare className="w-3 h-3" />
-              <span>WhatsApp 24x7</span>
-            </a>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
