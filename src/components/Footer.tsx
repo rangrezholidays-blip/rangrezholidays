@@ -1,7 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, MessageSquare, ShieldCheck, ArrowUp, Compass } from 'lucide-react';
-import { Logo } from './Logo';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  MessageSquare,
+  ShieldCheck,
+  ArrowUp,
+  Compass,
+} from "lucide-react";
+import logo from "../assets/white-logo.png";
 
 interface FooterProps {
   onOpenBooking: () => void;
@@ -9,15 +17,15 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const destinations = [
-    { id: 'delhi', name: 'Delhi Imperial Heritage' },
-    { id: 'agra', name: 'Agra & Taj Mahal Wonder' },
-    { id: 'rajasthan', name: 'Rajasthan Royal Forts & Dunes' },
-    { id: 'uttarakhand', name: 'Uttarakhand Devbhoomi & Char Dham' },
-    { id: 'himachal', name: 'Himachal Pine Valleys & Snow Peaks' },
+    { id: "delhi", name: "Delhi Imperial Heritage" },
+    { id: "agra", name: "Agra & Taj Mahal Wonder" },
+    { id: "rajasthan", name: "Rajasthan Royal Forts & Dunes" },
+    { id: "uttarakhand", name: "Uttarakhand Devbhoomi & Char Dham" },
+    { id: "himachal", name: "Himachal Pine Valleys & Snow Peaks" },
   ];
 
   return (
@@ -26,21 +34,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
-            <Link to="/" onClick={scrollToTop} className="inline-block cursor-pointer">
-              <Logo size="lg" variant="light" />
+            <Link to="/" onClick={scrollToTop} className="inline-block">
+              <img src={logo} alt="Rangrez Holidays" className="h-16 w-auto" />
             </Link>
             <p className="text-xs text-white/75 leading-relaxed max-w-sm">
-              Rangrez Holidays is India’s premier luxury experiential tour operator and chauffeur taxi fleet provider. Specializing in bespoke private departures across the Golden Triangle, Rajasthan, Himachal Pradesh, and sacred Char Dham pilgrimage circuits.
+              Rangrez Holidays is India’s premier luxury experiential tour
+              operator and chauffeur taxi fleet provider. Specializing in
+              bespoke private departures across the Golden Triangle, Rajasthan,
+              Himachal Pradesh, and sacred Char Dham pilgrimage circuits.
             </p>
 
             <div className="pt-2 flex flex-col space-y-2 text-xs text-white/80">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-[#FFA000] shrink-0" />
-                <span>Connaught Place & Aerocity, New Delhi • M.I. Road, Jaipur • Fatehabad Road, Agra</span>
+                <span>
+                  Connaught Place & Aerocity, New Delhi • M.I. Road, Jaipur •
+                  Fatehabad Road, Agra
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#FFA000] shrink-0" />
-                <a href="tel:+919310340049" className="hover:text-[#FFA000] transition-colors">
+                <a
+                  href="tel:+919310340049"
+                  className="hover:text-[#FFA000] transition-colors"
+                >
                   +91 93103 40049 / +91 88002 40049 (24x7 Helpline & WhatsApp)
                 </a>
               </div>
@@ -86,32 +103,50 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </h4>
             <ul className="space-y-2 text-xs text-white/75">
               <li>
-                <Link to="/tour/golden-triangle-classic" className="hover:text-white transition-colors">
+                <Link
+                  to="/tour/golden-triangle-classic"
+                  className="hover:text-white transition-colors"
+                >
                   The Royal Golden Triangle (6D)
                 </Link>
               </li>
               <li>
-                <Link to="/tour/rajasthan-royal-heritage" className="hover:text-white transition-colors">
+                <Link
+                  to="/tour/rajasthan-royal-heritage"
+                  className="hover:text-white transition-colors"
+                >
                   Grand Rajasthan Royalty (10D)
                 </Link>
               </li>
               <li>
-                <Link to="/tour/char-dham-yatra-sacred" className="hover:text-white transition-colors">
+                <Link
+                  to="/tour/char-dham-yatra-sacred"
+                  className="hover:text-white transition-colors"
+                >
                   Sacred Char Dham Yatra (12D)
                 </Link>
               </li>
               <li>
-                <Link to="/tour/himachal-shimla-manali-delight" className="hover:text-white transition-colors">
+                <Link
+                  to="/tour/himachal-shimla-manali-delight"
+                  className="hover:text-white transition-colors"
+                >
                   Shimla Manali Alpine Escape (7D)
                 </Link>
               </li>
               <li>
-                <Link to="/tour/same-day-agra-taj-mahal" className="hover:text-white transition-colors">
+                <Link
+                  to="/tour/same-day-agra-taj-mahal"
+                  className="hover:text-white transition-colors"
+                >
                   Same Day Taj Mahal Express
                 </Link>
               </li>
               <li className="pt-1">
-                <Link to="/tours" className="text-[#FFA000] font-bold hover:underline">
+                <Link
+                  to="/tours"
+                  className="text-[#FFA000] font-bold hover:underline"
+                >
                   Browse All Packages →
                 </Link>
               </li>
@@ -124,7 +159,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               Taxi & Custom Plan
             </h4>
             <p className="text-xs text-white/75 mb-3 leading-relaxed">
-              Have customized dates or need an executive chauffeur car for intercity trips?
+              Have customized dates or need an executive chauffeur car for
+              intercity trips?
             </p>
 
             <Link
@@ -160,7 +196,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               Explore by Travel Persona:
             </span>
             <span className="text-white/60 text-[11px]">
-              Tailored itineraries & calibrated chauffeur fleets for your specific companion style
+              Tailored itineraries & calibrated chauffeur fleets for your
+              specific companion style
             </span>
           </div>
           <div className="flex flex-wrap items-center gap-2">
@@ -199,7 +236,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
         {/* Local GEO Chauffeur Hubs Strip for Local SEO */}
         <div className="py-4 border-b border-white/10 text-[11px] text-white/50 flex flex-wrap items-center gap-x-2 gap-y-1">
-          <span className="font-semibold text-[#FFA000]">Local GEO Service Hubs:</span>
+          <span className="font-semibold text-[#FFA000]">
+            Local GEO Service Hubs:
+          </span>
           <span>Delhi NCR (Airport DEL T3 / Connaught Place / Gurugram)</span>
           <span>•</span>
           <span>Agra (Taj Mahal / Fatehabad Road)</span>
@@ -227,7 +266,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <a href="#ai-travel-knowledge-hub" className="hover:text-[#FFA000] transition-colors">
+            <a
+              href="#ai-travel-knowledge-hub"
+              className="hover:text-[#FFA000] transition-colors"
+            >
               AI Travel Guide (FAQs)
             </a>
             <span>•</span>
@@ -239,7 +281,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               Contact & Offices
             </Link>
             <span>•</span>
-            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+            <a
+              href="/sitemap.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
               Sitemap
             </a>
             <span>•</span>
@@ -254,7 +301,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         </div>
 
         <div className="mt-4 text-center text-[11px] text-white/40">
-          © {new Date().getFullYear()} Rangrez Holidays. All rights reserved. Bespoke travel itineraries & luxury chauffeur services across India.
+          © {new Date().getFullYear()} Rangrez Holidays. All rights reserved.
+          Bespoke travel itineraries & luxury chauffeur services across India.
         </div>
       </div>
     </footer>
