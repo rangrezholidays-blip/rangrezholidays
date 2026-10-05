@@ -183,7 +183,7 @@ export const TravelStyleDetailPage: React.FC<TravelStyleDetailPageProps> = ({
               </button>
 
               <a
-                href={`https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20am%20interested%20in%20planning%20a%20${encodeURIComponent(
+                href={`https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20am%20interested%20in%20planning%20a%20${encodeURIComponent(
                   currentStyle.navLabel
                 )}%20tour.`}
                 target="_blank"
@@ -537,7 +537,7 @@ export const TravelStyleDetailPage: React.FC<TravelStyleDetailPageProps> = ({
                 </button>
 
                 <a
-                  href={`https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20inquire%20about%20a%20${encodeURIComponent(
+                  href={`https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20inquire%20about%20a%20${encodeURIComponent(
                     currentStyle.navLabel
                   )}%20custom%20tour.`}
                   target="_blank"

@@ -27,6 +27,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EADBDF] shadow-xs">
+      
       {/* Top micro-bar for trust & direct hotline */}
       <div className="bg-[#4A0E35] text-white text-[11px] py-1.5 px-4 sm:px-8 border-b border-[#5A123E]">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -43,14 +44,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
           <div className="flex items-center gap-4 shrink-0">
             <a
-              href="tel:+919871234567"
+              href="tel:+919760402549"
               className="flex items-center gap-1 text-white/90 hover:text-white transition-colors"
             >
               <Phone className="w-3 h-3 text-[#F05A28]" />
-              <span className="font-semibold">+91 98712 34567</span>
+              <span className="font-semibold">+91 97604 02549 </span>
             </a>
             <a
-              href="https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20would%20like%20to%20inquire%20about%20tour%20packages%20and%20taxi%20services."
+              href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20would%20like%20to%20inquire%20about%20tour%20packages%20and%20taxi%20services."
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-semibold"
@@ -195,7 +196,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         {/* Actions & Book Button */}
         <div className="hidden sm:flex items-center gap-3">
           <a
-            href="https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
+            href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-emerald-500/40 text-emerald-700 hover:bg-emerald-50 text-xs font-bold transition-colors"
@@ -327,7 +328,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </button>
 
             <a
-              href="https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
+              href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-emerald-500 text-emerald-700 font-bold text-xs bg-emerald-50/50"
@@ -339,5 +340,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         </div>
       )}
     </header>
+    
   );
 };

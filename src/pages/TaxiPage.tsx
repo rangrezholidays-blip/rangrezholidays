@@ -66,7 +66,7 @@ export const TaxiPage: React.FC<TaxiPageProps> = ({ onBookTaxi, onOpenBooking })
               </button>
 
               <a
-                href="https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20need%20a%20chauffeur%20taxi%20quote."
+                href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20need%20a%20chauffeur%20taxi%20quote."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold transition-colors cursor-pointer"

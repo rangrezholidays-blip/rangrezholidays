@@ -179,7 +179,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({ onOpenBooking })
               </button>
 
               <a
-                href={`https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20am%20interested%20in%20${encodeURIComponent(tour.title)}%20(${encodeURIComponent(tour.duration)}).%20Please%20share%20details.`}
+                href={`https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20am%20interested%20in%20${encodeURIComponent(tour.title)}%20(${encodeURIComponent(tour.duration)}).%20Please%20share%20details.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold transition-colors cursor-pointer"
@@ -563,7 +563,7 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({ onOpenBooking })
                 </button>
 
                 <a
-                  href={`https://wa.me/919871234567?text=Namaste%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(tour.title)}`}
+                  href={`https://wa.me/919760402549?text=Namaste%2C%20I%20would%20like%20to%20inquire%20about%20${encodeURIComponent(tour.title)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 px-4 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"

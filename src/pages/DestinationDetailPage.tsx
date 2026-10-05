@@ -119,7 +119,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({ on
               </button>
 
               <a
-                href={`https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20private%20trip%20to%20${encodeURIComponent(destination.name)}.`}
+                href={`https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20private%20trip%20to%20${encodeURIComponent(destination.name)}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold transition-colors cursor-pointer"
@@ -315,7 +315,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({ on
                 </button>
 
                 <a
-                  href={`https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20know%20about%20travel%20packages%20for%20${encodeURIComponent(destination.name)}.`}
+                  href={`https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20know%20about%20travel%20packages%20for%20${encodeURIComponent(destination.name)}.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 px-4 rounded-xl border border-white/20 hover:bg-white/10 text-white text-xs font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer"

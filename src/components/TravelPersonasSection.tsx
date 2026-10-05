@@ -204,7 +204,7 @@ export const TravelPersonasSection: React.FC<TravelPersonasSectionProps> = ({
               Plan Custom Trip
             </button>
             <a
-              href="https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20would%20like%20to%20customize%20a%20private%20tour%20for%20my%20group."
+              href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20would%20like%20to%20customize%20a%20private%20tour%20for%20my%20group."
               target="_blank"
               rel="noopener noreferrer"
               className="py-3 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-md flex items-center gap-2"

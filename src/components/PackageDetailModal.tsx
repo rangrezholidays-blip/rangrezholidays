@@ -270,7 +270,7 @@ export const PackageDetailModal: React.FC<PackageDetailModalProps> = ({
 
           <div className="flex items-center gap-3">
             <a
-              href={`https://wa.me/919871234567?text=Namaste%2C%20I%20am%20inquiring%20about%20the%20${encodeURIComponent(packageData.title)}.`}
+              href={`https://wa.me/919760402549?text=Namaste%2C%20I%20am%20inquiring%20about%20the%20${encodeURIComponent(packageData.title)}.`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-emerald-500 text-emerald-700 bg-emerald-50 hover:bg-emerald-100 text-xs font-bold transition-colors"

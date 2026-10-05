@@ -126,7 +126,7 @@ export const ContactPage: React.FC = () => {
                   </p>
                   <div className="pt-2">
                     <a
-                      href={`https://wa.me/919871234567?text=Namaste%2C%20I%20just%20submitted%20a%20trip%20inquiry%20for%20${encodeURIComponent(formData.destination)}.`}
+                      href={`https://wa.me/919760402549?text=Namaste%2C%20I%20just%20submitted%20a%20trip%20inquiry%20for%20${encodeURIComponent(formData.destination)}.`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-colors"
@@ -180,7 +180,7 @@ export const ContactPage: React.FC = () => {
                       <input
                         type="tel"
                         required
-                        placeholder="+91 98712 34567"
+                        placeholder="+9197604 02549"
                         value={formData.phone}
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
@@ -342,8 +342,8 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <div className="font-bold text-[#4A0E35]">Hotlines & Reservations</div>
                     <p className="text-[#735467] mt-0.5">
-                      <a href="tel:+919871234567" className="hover:text-[#F05A28] font-semibold">
-                        +91 98712 34567
+                      <a href="tel:+919760402549" className="hover:text-[#F05A28] font-semibold">
+                        +9197604 02549
                       </a>{' '}
                       (24x7 Priority Desk)
                     </p>
@@ -357,7 +357,7 @@ export const ContactPage: React.FC = () => {
                   <div>
                     <div className="font-bold text-[#4A0E35]">Instant WhatsApp Support</div>
                     <a
-                      href="https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20would%20like%20to%20plan%20a%20trip."
+                      href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20would%20like%20to%20plan%20a%20trip."
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-emerald-700 font-bold hover:underline"

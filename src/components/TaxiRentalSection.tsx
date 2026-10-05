@@ -137,7 +137,7 @@ export const TaxiRentalSection: React.FC<TaxiRentalSectionProps> = ({ onBookTaxi
                 {/* CTA */}
                 <div className="pt-3 border-t border-[#EADBDF] flex items-center gap-2">
                   <a
-                    href={`https://wa.me/919871234567?text=${encodeURIComponent(
+                    href={`https://wa.me/919760402549?text=${encodeURIComponent(
                       `Namaste! I would like to book or inquire about the ${cab.name} taxi rental.`
                     )}`}
                     target="_blank"
