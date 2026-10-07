@@ -154,7 +154,7 @@ export const InstaReelsSection: React.FC<InstaReelsSectionProps> = ({ onPlanTrip
 
           <div className="flex items-center gap-2">
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/rangrezholidays"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#EADBDF] hover:border-[#F05A28] text-xs font-bold text-[#4A0E35] hover:text-[#F05A28] transition-colors"

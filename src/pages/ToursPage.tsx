@@ -11,7 +11,9 @@ import {
   Car,
   Filter,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { TOUR_PACKAGES } from '../data/toursData';
+import { STATIC_SEO, canonicalUrl } from '../data/seoData';
 
 interface ToursPageProps {
   onOpenBooking: (prefillTour?: string) => void;
@@ -61,6 +63,12 @@ export const ToursPage: React.FC<ToursPageProps> = ({ onOpenBooking }) => {
 
   return (
     <div className="bg-[#FAF7F5] min-h-screen">
+      <Helmet>
+        <title>{STATIC_SEO.tours.title}</title>
+        <meta name="description" content={STATIC_SEO.tours.description} />
+        <link rel="canonical" href={canonicalUrl(STATIC_SEO.tours.path)} />
+      </Helmet>
+
       {/* Hero Header */}
       <section className="relative bg-[#26071B] text-white py-14 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">

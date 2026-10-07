@@ -24,9 +24,11 @@ import {
   Camera,
   Image as ImageIcon,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { TOUR_PACKAGES } from '../data/toursData';
 import { TAXI_FLEET } from '../data/taxiData';
 import { CUSTOMER_REVIEWS } from '../data/reviewsAndReelsData';
+import { TOUR_SEO, canonicalUrl } from '../data/seoData';
 
 interface TourDetailPageProps {
   onOpenBooking: (prefillTour?: string) => void;
@@ -80,8 +82,20 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({ onOpenBooking })
     }
   };
 
+  const seo = TOUR_SEO[tour.id] ?? {
+    title: `${tour.title} | Rangrez Holidays`,
+    description: tour.tagline,
+    path: `/tour/${tour.id}`,
+  };
+
   return (
     <div className="bg-[#FAF7F5] min-h-screen">
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={canonicalUrl(seo.path)} />
+      </Helmet>
+
       {/* Breadcrumbs */}
       <div className="bg-white border-b border-[#EADBDF] py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs text-[#735467]">

@@ -55,10 +55,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#FFA000] shrink-0" />
                 <a
-                  href="tel:+919310340049"
+                  href="tel:+919760402549"
                   className="hover:text-[#FFA000] transition-colors"
                 >
-                  +91 93103 40049 / +91 88002 40049 (24x7 Helpline & WhatsApp)
+                  +91 97604 02549 (24x7 Helpline & WhatsApp)
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -178,7 +178,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </button>
 
             <a
-              href="https://wa.me/919871234567?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
+              href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold transition-colors"
@@ -267,7 +267,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
 
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#ai-travel-knowledge-hub"
+              href="/#ai-travel-knowledge-hub"
               className="hover:text-[#FFA000] transition-colors"
             >
               AI Travel Guide (FAQs)

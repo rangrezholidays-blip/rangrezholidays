@@ -14,8 +14,10 @@ import {
   Award,
   Navigation,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { TAXI_FLEET } from '../data/taxiData';
 import { TaxiVehicle } from '../types';
+import { STATIC_SEO, canonicalUrl } from '../data/seoData';
 
 interface TaxiPageProps {
   onBookTaxi: (vehicle: TaxiVehicle) => void;
@@ -32,6 +34,12 @@ export const TaxiPage: React.FC<TaxiPageProps> = ({ onBookTaxi, onOpenBooking })
 
   return (
     <div className="bg-[#FAF7F5] min-h-screen">
+      <Helmet>
+        <title>{STATIC_SEO.taxi.title}</title>
+        <meta name="description" content={STATIC_SEO.taxi.description} />
+        <link rel="canonical" href={canonicalUrl(STATIC_SEO.taxi.path)} />
+      </Helmet>
+
       {/* Hero Header */}
       <section className="relative bg-[#26071B] text-white py-16 sm:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">

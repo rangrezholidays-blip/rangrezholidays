@@ -15,9 +15,11 @@ import {
   Clock,
   Compass,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { DESTINATIONS_DATA } from '../data/destinationsData';
 import { TOUR_PACKAGES } from '../data/toursData';
 import { TAXI_FLEET } from '../data/taxiData';
+import { DESTINATION_SEO, canonicalUrl } from '../data/seoData';
 
 interface DestinationDetailPageProps {
   onOpenBooking: (prefillDestination?: string) => void;
@@ -61,8 +63,20 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({ on
 
   const galleryImages = [destination.heroImage, ...(destination.gallery || [])];
 
+  const seo = DESTINATION_SEO[destination.id] ?? {
+    title: `${destination.name} Private Tours | Rangrez Holidays`,
+    description: destination.tagline,
+    path: `/destination/${destination.id}`,
+  };
+
   return (
     <div className="bg-[#FAF7F5] min-h-screen">
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={canonicalUrl(seo.path)} />
+      </Helmet>
+
       {/* Breadcrumbs */}
       <div className="bg-white border-b border-[#EADBDF] py-3 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs font-medium text-[#735467]">

@@ -1,5 +1,7 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ReviewsSection } from '../components/ReviewsSection';
+import { STATIC_SEO, canonicalUrl } from '../data/seoData';
 import { InstaReelsSection } from '../components/InstaReelsSection';
 import { MessageSquare, Calendar, Star, ShieldCheck, Heart, Sparkles } from 'lucide-react';
 
@@ -10,6 +12,12 @@ interface ReviewsPageProps {
 export const ReviewsPage: React.FC<ReviewsPageProps> = ({ onOpenBooking }) => {
   return (
     <div className="bg-[#FAF7F5] min-h-screen">
+      <Helmet>
+        <title>{STATIC_SEO.reviews.title}</title>
+        <meta name="description" content={STATIC_SEO.reviews.description} />
+        <link rel="canonical" href={canonicalUrl(STATIC_SEO.reviews.path)} />
+      </Helmet>
+
       {/* Hero Header */}
       <section className="relative bg-[#26071B] text-white py-16 sm:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">

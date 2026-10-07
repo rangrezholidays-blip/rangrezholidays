@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Compass, ArrowRight, Sun, Car, Shield, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { DESTINATIONS_DATA } from '../data/destinationsData';
 import { TOUR_PACKAGES } from '../data/toursData';
+import { STATIC_SEO, canonicalUrl } from '../data/seoData';
 
 interface DestinationsPageProps {
   onOpenBooking: (prefillDestination?: string) => void;
@@ -18,6 +20,12 @@ export const DestinationsPage: React.FC<DestinationsPageProps> = ({ onOpenBookin
 
   return (
     <div className="bg-[#FAF7F5] min-h-screen">
+      <Helmet>
+        <title>{STATIC_SEO.destinations.title}</title>
+        <meta name="description" content={STATIC_SEO.destinations.description} />
+        <link rel="canonical" href={canonicalUrl(STATIC_SEO.destinations.path)} />
+      </Helmet>
+
       {/* Hero Header */}
       <section className="relative bg-[#26071B] text-white py-16 sm:py-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">

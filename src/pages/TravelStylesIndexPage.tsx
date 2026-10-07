@@ -10,8 +10,10 @@ import {
   ShieldCheck,
   Star,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { TRAVEL_STYLES_DATA } from '../data/travelStylesData';
 import { TravelStyle } from '../types';
+import { STATIC_SEO, canonicalUrl } from '../data/seoData';
 
 interface TravelStylesIndexPageProps {
   onOpenBooking: (prefillTour?: string) => void;
@@ -32,6 +34,12 @@ export const TravelStylesIndexPage: React.FC<TravelStylesIndexPageProps> = ({
 
   return (
     <div className="bg-[#FAF7F5] min-h-screen pb-24">
+      <Helmet>
+        <title>{STATIC_SEO.travelStyles.title}</title>
+        <meta name="description" content={STATIC_SEO.travelStyles.description} />
+        <link rel="canonical" href={canonicalUrl(STATIC_SEO.travelStyles.path)} />
+      </Helmet>
+
       {/* 1. Hero Header */}
       <div className="relative bg-[#24061A] text-white py-16 sm:py-24 overflow-hidden border-b border-[#4A0E35]">
         <div className="absolute inset-0">

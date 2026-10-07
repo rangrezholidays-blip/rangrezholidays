@@ -12,8 +12,10 @@ import {
   ShieldCheck,
   Sparkles,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { DESTINATIONS_DATA } from '../data/destinationsData';
 import { TAXI_FLEET } from '../data/taxiData';
+import { STATIC_SEO, canonicalUrl } from '../data/seoData';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -37,7 +39,7 @@ export const ContactPage: React.FC = () => {
     setErrorMsg('');
 
     try {
-      const response = await fetch('/api/inquire', {
+      const response = await fetch('/api/inquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -71,6 +73,12 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="bg-[#FAF7F5] min-h-screen">
+      <Helmet>
+        <title>{STATIC_SEO.contact.title}</title>
+        <meta name="description" content={STATIC_SEO.contact.description} />
+        <link rel="canonical" href={canonicalUrl(STATIC_SEO.contact.path)} />
+      </Helmet>
+
       {/* Hero Header */}
       <section className="relative bg-[#26071B] text-white py-16 sm:py-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-40">

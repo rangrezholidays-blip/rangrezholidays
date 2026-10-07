@@ -16,10 +16,12 @@ import {
   Car,
   ArrowRight,
 } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 import { TRAVEL_STYLES_DATA } from '../data/travelStylesData';
 import { TOUR_PACKAGES } from '../data/toursData';
 import { TAXI_FLEET } from '../data/taxiData';
 import { TourPackage, TaxiVehicle } from '../types';
+import { TRAVEL_STYLE_SEO, canonicalUrl } from '../data/seoData';
 
 interface TravelStyleDetailPageProps {
   onOpenBooking: (prefillTour?: string) => void;
@@ -86,8 +88,20 @@ export const TravelStyleDetailPage: React.FC<TravelStyleDetailPageProps> = ({
     currentStyle.recommendedVehicleIds.includes(v.id)
   );
 
+  const seo = TRAVEL_STYLE_SEO[currentStyle.id] ?? {
+    title: `${currentStyle.title} | Rangrez Holidays`,
+    description: currentStyle.tagline,
+    path: `/travel-style/${currentStyle.id}`,
+  };
+
   return (
     <div className="bg-[#FAF7F5] min-h-screen pb-24">
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={canonicalUrl(seo.path)} />
+      </Helmet>
+
       {/* 1. Breadcrumbs Bar */}
       <div className="bg-[#FAF4F8] border-b border-[#EADBDF]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between text-xs">

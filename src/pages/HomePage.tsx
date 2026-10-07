@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { STATIC_SEO, canonicalUrl } from '../data/seoData';
 import {
   Car,
   Star,
@@ -39,6 +41,12 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div>
+      <Helmet>
+        <title>{STATIC_SEO.home.title}</title>
+        <meta name="description" content={STATIC_SEO.home.description} />
+        <link rel="canonical" href={canonicalUrl(STATIC_SEO.home.path)} />
+      </Helmet>
+
       {/* 1. Hero with Video Background & Streamlined Text (Only Main & Subheading) */}
       <Hero
         onSearch={(pkgId) => onOpenBooking(pkgId)}
