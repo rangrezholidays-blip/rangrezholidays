@@ -7,43 +7,43 @@
   <!-- Primary Landing Pages -->
   <url>
     <loc>https://rangrezholidays.com/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/tours</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/taxi</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/destinations</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/travel-styles</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/reviews</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/contact</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -51,37 +51,55 @@
   <!-- Popular Tour Package URLs -->
   <url>
     <loc>https://rangrezholidays.com/tour/golden-triangle-classic</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/tour/same-day-agra-taj-mahal</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/tour/rajasthan-royal-heritage</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://rangrezholidays.com/tour/char-dham-kedarnath-heli</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://rangrezholidays.com/tour/char-dham-yatra-sacred</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://rangrezholidays.com/tour/udaipur-lake-city-escape</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://rangrezholidays.com/tour/same-day-delhi-heritage</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rangrezholidays.com/tour/delhi-city-heritage-day</loc>
-    <lastmod>2026-09-19</lastmod>
+    <loc>https://rangrezholidays.com/tour/same-day-jaipur-pink-city</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rangrezholidays.com/tour/same-day-mathura-vrindavan</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rangrezholidays.com/tour/himachal-shimla-manali-delight</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rangrezholidays.com/tour/himachal-spiti-valley-adventure</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -89,37 +107,31 @@
   <!-- Key Destination URLs -->
   <url>
     <loc>https://rangrezholidays.com/destination/delhi</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/destination/agra</loc>
-    <lastmod>2026-09-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://rangrezholidays.com/destination/jaipur</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/destination/rajasthan</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/destination/uttarakhand</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/destination/himachal</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -127,31 +139,31 @@
   <!-- Travel Personas URLs -->
   <url>
     <loc>https://rangrezholidays.com/travel-style/family</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/travel-style/honeymoon</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/travel-style/friends</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/travel-style/solo</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rangrezholidays.com/travel-style/corporate</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

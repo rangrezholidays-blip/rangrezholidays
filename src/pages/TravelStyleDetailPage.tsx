@@ -50,6 +50,10 @@ export const TravelStyleDetailPage: React.FC<TravelStyleDetailPageProps> = ({
   if (!currentStyle) {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center p-8 text-center bg-[#FAF7F5]">
+        <Helmet>
+          <title>Page Not Found | Rangrez Holidays</title>
+          <meta name="robots" content="noindex, follow" />
+        </Helmet>
         <div className="text-4xl mb-4">🧭</div>
         <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#4A0E35]">
           Travel Style Not Found

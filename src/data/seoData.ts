@@ -3,7 +3,7 @@
 // title, meta description and canonical URL instead of relying
 // on the single static tags in index.html.
 
-export const SITE_URL = 'https://www.rangrezholidays.com';
+export const SITE_URL = 'https://rangrezholidays.com';
 
 export interface SeoEntry {
   title: string;

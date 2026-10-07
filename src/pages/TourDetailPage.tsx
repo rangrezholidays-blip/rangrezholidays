@@ -48,6 +48,10 @@ export const TourDetailPage: React.FC<TourDetailPageProps> = ({ onOpenBooking })
   if (!tour) {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-4 bg-[#FAF7F5]">
+        <Helmet>
+          <title>Page Not Found | Rangrez Holidays</title>
+          <meta name="robots" content="noindex, follow" />
+        </Helmet>
         <MapPin className="w-16 h-16 text-[#F05A28] mb-4" />
         <h1 className="font-serif text-3xl font-bold text-[#4A0E35]">Tour Package Not Found</h1>
         <p className="mt-2 text-sm text-[#735467] max-w-md">
