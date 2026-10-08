@@ -16,7 +16,7 @@ export function getTransporter() {
   const user = process.env.GMAIL_USER;
   const pass = process.env.GMAIL_APP_PASSWORD;
 
-  if (user && pass && user !== 'your-email@gmail.com') {
+  if (user && pass && user !== 'rangrezholidays@gmail.com') {
     return nodemailer.createTransport({
       service: 'gmail',
       auth: { user, pass },
@@ -28,7 +28,7 @@ export function getTransporter() {
 export function isSmtpConfigured(): boolean {
   const user = process.env.GMAIL_USER;
   const pass = process.env.GMAIL_APP_PASSWORD;
-  return Boolean(user && pass && user !== 'your-email@gmail.com');
+  return Boolean(user && pass && user !== 'rangrezholidays@gmail.com');
 }
 
 export function buildAdminEmailHtml(inquiryId: string, fields: {
