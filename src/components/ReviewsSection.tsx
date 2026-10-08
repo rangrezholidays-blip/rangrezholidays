@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Star, CheckCircle2, Quote, Sparkles, MapPin, ThumbsUp } from 'lucide-react';
 import { CUSTOMER_REVIEWS } from '../data/reviewsAndReelsData';

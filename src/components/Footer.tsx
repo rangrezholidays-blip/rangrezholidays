@@ -1,5 +1,7 @@
+'use client';
+
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 import {
   Phone,
   Mail,
@@ -34,8 +36,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
-            <Link to="/" onClick={scrollToTop} className="inline-block">
-              <img src={logo} alt="Rangrez Holidays" className="h-16 w-auto" />
+            <Link href="/" onClick={scrollToTop} className="inline-block">
+              <img src={logo.src} alt="Rangrez Holidays" className="h-16 w-auto" />
             </Link>
             <p className="text-xs text-white/75 leading-relaxed max-w-sm">
               Rangrez Holidays is India’s premier luxury experiential tour
@@ -78,7 +80,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               {destinations.map((dest) => (
                 <li key={dest.id}>
                   <Link
-                    to={`/destination/${dest.id}`}
+                    href={`/destination/${dest.id}`}
                     className="hover:text-white transition-colors"
                   >
                     {dest.name}
@@ -87,7 +89,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               ))}
               <li className="pt-1">
                 <Link
-                  to="/destinations"
+                  href="/destinations"
                   className="text-[#FFA000] font-bold hover:underline"
                 >
                   View All Destinations →
@@ -104,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             <ul className="space-y-2 text-xs text-white/75">
               <li>
                 <Link
-                  to="/tour/golden-triangle-classic"
+                  href="/tour/golden-triangle-classic"
                   className="hover:text-white transition-colors"
                 >
                   The Royal Golden Triangle (6D)
@@ -112,7 +114,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </li>
               <li>
                 <Link
-                  to="/tour/rajasthan-royal-heritage"
+                  href="/tour/rajasthan-royal-heritage"
                   className="hover:text-white transition-colors"
                 >
                   Grand Rajasthan Royalty (10D)
@@ -120,7 +122,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </li>
               <li>
                 <Link
-                  to="/tour/char-dham-yatra-sacred"
+                  href="/tour/char-dham-yatra-sacred"
                   className="hover:text-white transition-colors"
                 >
                   Sacred Char Dham Yatra (12D)
@@ -128,7 +130,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </li>
               <li>
                 <Link
-                  to="/tour/himachal-shimla-manali-delight"
+                  href="/tour/himachal-shimla-manali-delight"
                   className="hover:text-white transition-colors"
                 >
                   Shimla Manali Alpine Escape (7D)
@@ -136,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </li>
               <li>
                 <Link
-                  to="/tour/same-day-agra-taj-mahal"
+                  href="/tour/same-day-agra-taj-mahal"
                   className="hover:text-white transition-colors"
                 >
                   Same Day Taj Mahal Express
@@ -144,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               </li>
               <li className="pt-1">
                 <Link
-                  to="/tours"
+                  href="/tours"
                   className="text-[#FFA000] font-bold hover:underline"
                 >
                   Browse All Packages →
@@ -164,7 +166,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
             </p>
 
             <Link
-              to="/taxi"
+              href="/taxi"
               className="block text-center py-2 px-3 rounded-xl border border-white/20 hover:border-white text-xs font-semibold text-white/90 hover:text-white transition-colors mb-2"
             >
               Explore Chauffeur Fleet
@@ -202,31 +204,31 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <Link
-              to="/travel-style/family"
+              href="/travel-style/family"
               className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/15 text-xs text-white/90 border border-white/10 transition-colors"
             >
               👨‍👩‍👧‍👦 Family Holidays
             </Link>
             <Link
-              to="/travel-style/honeymoon"
+              href="/travel-style/honeymoon"
               className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/15 text-xs text-white/90 border border-white/10 transition-colors"
             >
               💍 Honeymoon & Couples
             </Link>
             <Link
-              to="/travel-style/friends"
+              href="/travel-style/friends"
               className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/15 text-xs text-white/90 border border-white/10 transition-colors"
             >
               🎒 Friends & Groups
             </Link>
             <Link
-              to="/travel-style/solo"
+              href="/travel-style/solo"
               className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/15 text-xs text-white/90 border border-white/10 transition-colors"
             >
               🧭 Solo Travel
             </Link>
             <Link
-              to="/travel-style/corporate"
+              href="/travel-style/corporate"
               className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/15 text-xs text-white/90 border border-white/10 transition-colors"
             >
               💼 Corporate Offsites
@@ -273,11 +275,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               AI Travel Guide (FAQs)
             </a>
             <span>•</span>
-            <Link to="/reviews" className="hover:text-white transition-colors">
+            <Link href="/reviews" className="hover:text-white transition-colors">
               Traveler Reviews
             </Link>
             <span>•</span>
-            <Link to="/contact" className="hover:text-white transition-colors">
+            <Link href="/contact" className="hover:text-white transition-colors">
               Contact & Offices
             </Link>
             <span>•</span>

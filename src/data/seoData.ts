@@ -1,9 +1,9 @@
 // Central SEO metadata for every page on the site.
-// Used by each page component via <Helmet> to set a unique
+// Used by each page component via generateMetadata() to set a unique
 // title, meta description and canonical URL instead of relying
 // on the single static tags in index.html.
 
-export const SITE_URL = 'https://rangrezholidays.com';
+export const SITE_URL = 'https://www.rangrezholidays.com';
 
 export interface SeoEntry {
   title: string;

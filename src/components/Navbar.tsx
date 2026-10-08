@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Phone, MessageSquare, Menu, X, Calendar, Compass, ShieldCheck, ChevronDown, MapPin } from 'lucide-react';
 import { Logo } from './Logo';
 
@@ -10,7 +13,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [destinationsDropdown, setDestinationsDropdown] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const destinationsList = [
     { id: 'delhi', name: 'Delhi', desc: 'Imperial Capital & Heritage' },
@@ -21,8 +24,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
   ];
 
   const isActive = (path: string) => {
-    if (path === '/') return location.pathname === '/';
-    return location.pathname.startsWith(path);
+    if (path === '/') return pathname === '/';
+    return pathname.startsWith(path);
   };
 
   return (
@@ -34,14 +37,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="cursor-pointer py-1 flex items-center">
+        <Link href="/" className="cursor-pointer py-1 flex items-center">
           <Logo size="md" variant="dark" />
         </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
           <Link
-            to="/"
+            href="/"
             className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
               isActive('/')
                 ? 'text-[#F05A28] bg-[#FFF5EE]'
@@ -58,7 +61,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             onMouseLeave={() => setDestinationsDropdown(false)}
           >
             <Link
-              to="/destinations"
+              href="/destinations"
               className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1 ${
                 isActive('/destination')
                   ? 'text-[#F05A28] bg-[#FFF5EE]'
@@ -79,7 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 {destinationsList.map((dest) => (
                   <Link
                     key={dest.id}
-                    to={`/destination/${dest.id}`}
+                    href={`/destination/${dest.id}`}
                     onClick={() => setDestinationsDropdown(false)}
                     className="flex items-start gap-2.5 px-3 py-2 rounded-xl hover:bg-[#FAF4F8] transition-colors group"
                   >
@@ -94,7 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
                 ))}
                 <div className="pt-1.5 mt-1 border-t border-[#F0E6EC]">
                   <Link
-                    to="/destinations"
+                    href="/destinations"
                     onClick={() => setDestinationsDropdown(false)}
                     className="block text-center py-1.5 text-[11px] font-bold text-[#F05A28] hover:underline"
                   >
@@ -106,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </div>
 
           <Link
-            to="/tours"
+            href="/tours"
             className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
               isActive('/tour')
                 ? 'text-[#F05A28] bg-[#FFF5EE]'
@@ -117,7 +120,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </Link>
 
           <Link
-            to="/travel-styles"
+            href="/travel-styles"
             className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
               isActive('/travel-style')
                 ? 'text-[#F05A28] bg-[#FFF5EE]'
@@ -128,7 +131,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </Link>
 
           <Link
-            to="/taxi"
+            href="/taxi"
             className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
               isActive('/taxi')
                 ? 'text-[#F05A28] bg-[#FFF5EE]'
@@ -139,7 +142,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </Link>
 
           <Link
-            to="/reviews"
+            href="/reviews"
             className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
               isActive('/reviews')
                 ? 'text-[#F05A28] bg-[#FFF5EE]'
@@ -150,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </Link>
 
           <Link
-            to="/contact"
+            href="/contact"
             className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
               isActive('/contact')
                 ? 'text-[#F05A28] bg-[#FFF5EE]'
@@ -199,7 +202,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         <div className="lg:hidden bg-white border-b border-[#EADBDF] px-4 py-5 space-y-3 animate-fadeIn shadow-lg">
           <nav className="flex flex-col space-y-1">
             <Link
-              to="/"
+              href="/"
               onClick={() => setMobileMenuOpen(false)}
               className={`text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
                 isActive('/') ? 'bg-[#FFF5EE] text-[#F05A28]' : 'text-[#4A0E35] hover:bg-[#FAF4F8]'
@@ -209,7 +212,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </Link>
 
             <Link
-              to="/destinations"
+              href="/destinations"
               onClick={() => setMobileMenuOpen(false)}
               className={`text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
                 isActive('/destination') ? 'bg-[#FFF5EE] text-[#F05A28]' : 'text-[#4A0E35] hover:bg-[#FAF4F8]'
@@ -222,7 +225,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               {destinationsList.map((dest) => (
                 <Link
                   key={dest.id}
-                  to={`/destination/${dest.id}`}
+                  href={`/destination/${dest.id}`}
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-3 py-1.5 rounded-lg text-xs font-medium text-[#735467] hover:text-[#4A0E35] hover:bg-[#FAF4F8]"
                 >
@@ -232,7 +235,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </div>
 
             <Link
-              to="/tours"
+              href="/tours"
               onClick={() => setMobileMenuOpen(false)}
               className={`text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
                 isActive('/tour') ? 'bg-[#FFF5EE] text-[#F05A28]' : 'text-[#4A0E35] hover:bg-[#FAF4F8]'
@@ -242,7 +245,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </Link>
 
             <Link
-              to="/travel-styles"
+              href="/travel-styles"
               onClick={() => setMobileMenuOpen(false)}
               className={`text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
                 isActive('/travel-style') ? 'bg-[#FFF5EE] text-[#F05A28]' : 'text-[#4A0E35] hover:bg-[#FAF4F8]'
@@ -252,7 +255,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </Link>
 
             <Link
-              to="/taxi"
+              href="/taxi"
               onClick={() => setMobileMenuOpen(false)}
               className={`text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
                 isActive('/taxi') ? 'bg-[#FFF5EE] text-[#F05A28]' : 'text-[#4A0E35] hover:bg-[#FAF4F8]'
@@ -262,7 +265,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </Link>
 
             <Link
-              to="/reviews"
+              href="/reviews"
               onClick={() => setMobileMenuOpen(false)}
               className={`text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
                 isActive('/reviews') ? 'bg-[#FFF5EE] text-[#F05A28]' : 'text-[#4A0E35] hover:bg-[#FAF4F8]'
@@ -272,7 +275,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </Link>
 
             <Link
-              to="/contact"
+              href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className={`text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-colors ${
                 isActive('/contact') ? 'bg-[#FFF5EE] text-[#F05A28]' : 'text-[#4A0E35] hover:bg-[#FAF4F8]'

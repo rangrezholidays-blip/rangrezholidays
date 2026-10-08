@@ -1,4 +1,6 @@
-import React, { useState, useRef } from 'react';
+'use client';
+
+import React, { useState, useRef, useEffect } from 'react';
 import { Calendar, Search, MapPin, Car, ArrowRight, Volume2, VolumeX, Play, Pause } from 'lucide-react';
 import { TOUR_PACKAGES } from '../data/toursData';
 import { TAXI_FLEET } from '../data/taxiData';
@@ -19,9 +21,12 @@ export const Hero: React.FC<HeroProps> = ({
   onSelectPersona,
 }) => {
   const [selectedTour, setSelectedTour] = useState<string>('golden-triangle-classic');
-  const [travelDate, setTravelDate] = useState<string>(
-    new Date(Date.now() + 86400000 * 3).toISOString().split('T')[0]
-  );
+  // Set on the client after mount so server HTML and first client render match
+  // (the server runs in UTC, the visitor's browser in their own timezone).
+  const [travelDate, setTravelDate] = useState<string>('');
+  useEffect(() => {
+    setTravelDate(new Date(Date.now() + 86400000 * 3).toISOString().split('T')[0]);
+  }, []);
   const [vehicleType, setVehicleType] = useState<string>('innova-crysta');
   const [searchTab, setSearchTab] = useState<'tour' | 'cab'>('tour');
   const [selectedPersona, setSelectedPersona] = useState<string>('family');

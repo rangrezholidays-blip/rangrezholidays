@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { MessageSquare, X, Send, PhoneCall, Sparkles, CheckCheck } from 'lucide-react';
 

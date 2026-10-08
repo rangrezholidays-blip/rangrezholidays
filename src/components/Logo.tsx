@@ -1,3 +1,5 @@
+'use client';
+
 // src/components/Logo.tsx
 import React from 'react';
 import logo from '../assets/logo.png';
@@ -23,7 +25,7 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`inline-flex items-center select-none ${className}`}>
       <img
-        src={logo}
+        src={logo.src}
         alt="Company logo"
         className={`${heights[size]} w-auto object-contain ${
           variant === 'light' ? 'brightness-0 invert' : ''

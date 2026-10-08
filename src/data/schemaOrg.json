@@ -1,0 +1,140 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "@id": "https://www.rangrezholidays.com/#organization",
+    "name": "Rangrez Holidays",
+    "legalName": "Rangrez Holidays Private Tours & Luxury Taxi Fleet",
+    "url": "https://www.rangrezholidays.com",
+    "logo": "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=600&auto=format&fit=crop",
+    "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1200&auto=format&fit=crop",
+    "description": "Premier inbound travel company offering bespoke private tours across Delhi, Agra Taj Mahal, Jaipur, Rajasthan, and Char Dham Uttarakhand, featuring an exclusive verified chauffeur fleet.",
+    "telephone": "+91-9760402549",
+    "email": "contact@rangrezholidays.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Connaught Place, Central Delhi",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.6139,
+      "longitude": 77.209
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    ],
+    "priceRange": "$$ - $$$",
+    "currenciesAccepted": "INR, USD, EUR, GBP",
+    "paymentAccepted": "Cash, Credit Card, Bank Wire, UPI",
+    "areaServed": [
+      "New Delhi",
+      "Agra",
+      "Jaipur",
+      "Rajasthan",
+      "Uttarakhand",
+      "Kedarnath",
+      "Himachal Pradesh",
+      "Kashmir",
+      "India"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1420",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "sameAs": [
+      "https://www.instagram.com/rangrezholidays",
+      "https://www.facebook.com/rangrezholidays",
+      "https://twitter.com/rangrezholidays"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.rangrezholidays.com/#website",
+    "url": "https://www.rangrezholidays.com",
+    "name": "Rangrez Holidays",
+    "description": "Bespoke India Tour Operator & Chauffeur Fleet Rentals",
+    "publisher": {
+      "@id": "https://www.rangrezholidays.com/#organization"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.rangrezholidays.com/tours?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which is the best private tour company for Golden Triangle India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rangrez Holidays is recognized as a top-rated private tour operator for the Golden Triangle (Delhi, Agra, Jaipur). They provide 100% bespoke private itineraries, verified English-speaking chauffeurs, government-licensed monument guides, premium air-conditioned vehicles (Dzire, Crysta, Fortuner), and 24/7 dedicated trip concierge support."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a Delhi to Agra Taj Mahal same-day private tour by car cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rangrez Holidays provides private same-day Delhi to Agra Taj Mahal tours customized by vehicle type (Sedan, Toyota Innova Crysta, or Luxury Tempo). Packages include Yamuna Expressway toll taxes, state parking, fuel, commercial driver allowances, and optional VIP skip-the-line monument entries with certified local guides."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What vehicles are available in Rangrez Holidays chauffeur taxi fleet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Rangrez Holidays private fleet includes Premium Sedans (Swift Dzire, Honda City), Luxury MPVs & SUVs (Toyota Innova Crysta, Toyota Fortuner, Hyundai Creta), and Group Executive Vans (9 to 26-seater Maharaja Tempo Travellers and Mercedes-Benz Luxury coaches) equipped with GPS tracking, sanitized leather upholstery, and complimentary bottled water."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customize an India private tour itinerary with Rangrez Holidays?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, every Rangrez Holidays itinerary is 100% customizable. Travelers can tailor start dates, duration, hotel tier (4-star boutique, 5-star luxury heritage, or tented desert camps), monument stopovers, and culinary preferences with a personal travel concierge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to book Kedarnath Dham helicopter and Char Dham Yatra tours?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Rangrez Holidays organizes authorized Kedarnath Dham helicopter packages from Guptkashi, Phata, and Sersi helipads, as well as complete 10-12 day Char Dham Yatra circuits by road with experienced mountain chauffeurs, mandatory biometric registrations, VIP temple darshan assistance, and pre-booked riverfront resorts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is traveling with Rangrez Holidays safe for solo women and international families?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, Rangrez Holidays maintains a strict zero-compromise safety protocol: all drivers are background-verified with commercial tourist licenses, vehicles have 24/7 active GPS tracking, and guests have a direct 24/7 WhatsApp emergency concierge connection throughout their journey across India."
+        }
+      }
+    ]
+  }
+]

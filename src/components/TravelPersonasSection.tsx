@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import {
   Users,
   Heart,
@@ -51,7 +53,7 @@ export const TravelPersonasSection: React.FC<TravelPersonasSectionProps> = ({
 
           <div className="flex items-center gap-3 shrink-0">
             <Link
-              to="/travel-styles"
+              href="/travel-styles"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#4A0E35]/20 text-xs font-bold text-[#4A0E35] hover:bg-[#FAF4F8] transition-colors group cursor-pointer"
             >
               <span>View All 5 Travel Styles</span>
@@ -160,7 +162,7 @@ export const TravelPersonasSection: React.FC<TravelPersonasSectionProps> = ({
                 {/* Card Footer Actions */}
                 <div className="p-6 pt-0 flex flex-col sm:flex-row items-center gap-2.5">
                   <Link
-                    to={`/travel-style/${style.id}`}
+                    href={`/travel-style/${style.id}`}
                     className="w-full sm:flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#4A0E35] to-[#F05A28] text-white text-xs font-bold text-center shadow-sm hover:brightness-110 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                   >
                     <span>View Dedicated Page</span>

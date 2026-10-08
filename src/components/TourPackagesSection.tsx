@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { Clock, MapPin, Sparkles, ChevronRight, Calendar, Users, Eye } from 'lucide-react';
 import { TOUR_PACKAGES } from '../data/toursData';

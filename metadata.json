@@ -1,6 +1,0 @@
-{
-  "name": "Rangrez Holidays",
-  "description": "Rangrez Holidays is India's premier bespoke travel agency and luxury chauffeur taxi fleet provider, specializing in private Golden Triangle tours (Delhi, Agra Taj Mahal, Jaipur), Rajasthan heritage journeys, and Uttarakhand Char Dham Kedarnath yatra.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

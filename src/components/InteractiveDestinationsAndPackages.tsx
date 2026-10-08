@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import {
   Compass,
   MapPin,
@@ -511,7 +513,7 @@ export const InteractiveDestinationsAndPackages: React.FC<
                     <div className="p-5 pt-0 border-t border-[#F0E6EC] mt-2">
                       <div className="flex items-center gap-2 pt-3">
                         <Link
-                          to={`/tour/${tour.id}`}
+                          href={`/tour/${tour.id}`}
                           className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#4A0E35] hover:bg-[#380927] text-white text-xs font-bold transition-all shadow-xs group/btn cursor-pointer"
                         >
                           <span>View Itinerary</span>
@@ -614,7 +616,7 @@ export const InteractiveDestinationsAndPackages: React.FC<
 
                 <div className="p-6 pt-0 flex items-center justify-between gap-3 border-t border-[#F0E6EC] mt-4">
                   <Link
-                    to={`/destination/${dest.id}`}
+                    href={`/destination/${dest.id}`}
                     className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl bg-[#4A0E35] hover:bg-[#380927] text-white text-xs font-bold transition-all shadow-md group cursor-pointer"
                   >
                     <span>View {dest.name} Guide</span>
