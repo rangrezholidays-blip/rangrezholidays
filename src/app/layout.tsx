@@ -20,6 +20,10 @@ const GA_ID = 'G-KES3CGYSTR';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+   icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
   // Fallback only: every page sets its own title, description and canonical.
   title: DEFAULT_TITLE,
   description: DEFAULT_DESCRIPTION,
