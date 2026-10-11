@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   X,
   ChevronRight,
@@ -37,6 +38,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
   initialTaxiId,
   initialDate,
 }) => {
+  const router = useRouter();
   const [step, setStep] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [submittedResult, setSubmittedResult] = useState<{
@@ -132,12 +134,13 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
 
       const data = await response.json();
       if (response.ok && data.success) {
-        setSubmittedResult({
-          inquiryId: data.inquiryId,
-          message: data.message,
-          emailDispatched: data.emailDispatched,
-          emailStatusMessage: data.emailStatusMessage,
-        });
+        // Reset the form, close the modal and send the visitor to the thank-you page.
+        setStep(1);
+        setFormData((prev) => ({ ...prev, fullName: '', email: '', phone: '', specialRequests: '' }));
+        onClose();
+        router.push(
+          `/thank-you?ref=${encodeURIComponent(data.inquiryId)}${data.guestEmailSent ? '&mail=1' : ''}`
+        );
       } else {
         setErrors({ submit: data.error || 'Failed to submit inquiry. Please try again.' });
       }

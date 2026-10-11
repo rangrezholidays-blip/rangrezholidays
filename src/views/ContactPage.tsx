@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   MapPin,
   Phone,
@@ -18,6 +19,7 @@ import { DESTINATIONS_DATA } from '../data/destinationsData';
 import { TAXI_FLEET } from '../data/taxiData';
 
 export const ContactPage: React.FC = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -58,14 +60,16 @@ export const ContactPage: React.FC = () => {
       const data = await response.json();
 
       if (response.ok && data.success) {
-        setSubmitted(true);
+        router.push(
+          `/thank-you?ref=${encodeURIComponent(data.inquiryId)}${data.guestEmailSent ? '&mail=1' : ''}`
+        );
       } else {
-        // Even if server email had an issue, show polite fallback
-        setSubmitted(true);
+        setErrorMsg(
+          data.error || 'We could not send your inquiry. Please try again or message us on WhatsApp.'
+        );
       }
     } catch (err) {
-      // In dev without SMTP configured, still ensure pleasant user feedback
-      setSubmitted(true);
+      setErrorMsg('We could not send your inquiry. Please check your connection or message us on WhatsApp.');
     } finally {
       setLoading(false);
     }
@@ -291,6 +295,12 @@ export const ContactPage: React.FC = () => {
                       className="w-full bg-[#FAF4F8] border border-[#EADBDF] rounded-xl px-3.5 py-2.5 text-xs text-[#4A0E35] focus:outline-none focus:ring-2 focus:ring-[#F05A28]"
                     />
                   </div>
+
+                  {errorMsg && (
+                    <p role="alert" className="text-xs text-rose-600 bg-rose-50 border border-rose-100 rounded-xl px-3.5 py-2.5">
+                      {errorMsg}
+                    </p>
+                  )}
 
                   <button
                     type="submit"

@@ -97,9 +97,27 @@ export function buildGuestEmailHtml(fullName: string, packageName: string | unde
       <h2 style="color: #4A0E35;">Namaste ${esc(fullName)},</h2>
       <p>Thank you for choosing <strong>Rangrez Holidays</strong> for your journey! We have received your inquiry for <strong>${esc(packageName) || 'your customized tour / taxi rental'}</strong>.</p>
       <p>Our dedicated travel concierge is reviewing your preferred dates (${esc(startDate) || 'Flexible'}) and will contact you via WhatsApp/Phone at <strong>${esc(phone)}</strong> with a personalized itinerary and availability options within 30 minutes.</p>
+      <p>Your reference number: <strong>${esc(inquiryId)}</strong></p>
       <p>If you need instant priority assistance, feel free to chat with us directly on WhatsApp at <strong>${whatsappNumber}</strong>.</p>
       <br/>
       <p style="color: #735467; font-size: 13px;">Warm regards,<br/><strong>Team Rangrez Holidays</strong></p>
     </div>
   `;
+}
+
+// Plain-text version of the customer email (improves deliverability and works in text-only clients).
+export function buildGuestEmailText(fullName: string, packageName: string | undefined, startDate: string | undefined, phone: string, inquiryId: string, whatsappNumber: string) {
+  return [
+    `Namaste ${fullName},`,
+    '',
+    `Thank you for choosing Rangrez Holidays! We have received your inquiry for ${packageName || 'your customized tour / taxi rental'}.`,
+    '',
+    `Our travel concierge is reviewing your preferred dates (${startDate || 'Flexible'}) and will contact you on ${phone} with a personalized itinerary within 30 minutes.`,
+    '',
+    `Your reference number: ${inquiryId}`,
+    `For instant assistance, WhatsApp us at ${whatsappNumber}.`,
+    '',
+    'Warm regards,',
+    'Team Rangrez Holidays',
+  ].join('\n');
 }

@@ -1,5 +1,10 @@
 import { NextResponse } from 'next/server';
-import { getTransporter, buildAdminEmailHtml, buildGuestEmailHtml } from '@/lib/mailer';
+import {
+  getTransporter,
+  buildAdminEmailHtml,
+  buildGuestEmailHtml,
+  buildGuestEmailText,
+} from '@/lib/mailer';
 
 // nodemailer needs the Node.js runtime (not Edge).
 export const runtime = 'nodejs';
@@ -36,19 +41,28 @@ export async function POST(req: Request) {
     }
 
     const inquiryId = `RH-${Date.now().toString().slice(-6)}`;
-    let emailDispatched = false;
-    let emailStatusMessage = '';
 
     const transporter = getTransporter();
+    const sender = `"Rangrez Holidays" <${process.env.GMAIL_USER}>`;
+    const teamInbox =
+      process.env.NOTIFICATION_EMAIL || process.env.GMAIL_USER || 'bookings@rangrezholidays.com';
+    const customerEmailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    if (transporter && email) {
+    let adminEmailSent = false;
+    let guestEmailSent = false;
+    const notes: string[] = [];
+
+    if (!transporter) {
+      notes.push(
+        'Inquiry registered. (Configure GMAIL_USER & GMAIL_APP_PASSWORD in Vercel Environment Variables to enable live email dispatch).'
+      );
+    } else {
+      // 1) Notification to the team. Always sent, even if the customer left no email.
       try {
-        const receiver =
-          process.env.NOTIFICATION_EMAIL || process.env.GMAIL_USER || 'bookings@rangrezholidays.com';
-
         await transporter.sendMail({
-          from: `"Rangrez Holidays" <${process.env.GMAIL_USER}>`,
-          to: receiver,
+          from: sender,
+          to: teamInbox,
+          replyTo: customerEmailOk ? email : undefined,
           subject: `[New Inquiry] ${packageName || 'Custom Travel Plan'} - ${fullName} (${inquiryId})`,
           html: buildAdminEmailHtml(inquiryId, {
             type, packageName, destination, startDate, duration, adults, children,
@@ -56,25 +70,39 @@ export async function POST(req: Request) {
             whatsappSameAsPhone, specialRequests, source,
           }),
         });
-
-        await transporter.sendMail({
-          from: `"Rangrez Holidays" <${process.env.GMAIL_USER}>`,
-          to: email,
-          subject: `Namaste ${fullName}! Your Rangrez Holidays Inquiry [${inquiryId}] has been received`,
-          html: buildGuestEmailHtml(fullName, packageName, startDate, phone, inquiryId, WHATSAPP_DISPLAY),
-        });
-
-        emailDispatched = true;
-        emailStatusMessage = 'Email dispatched successfully via Gmail SMTP.';
-      } catch (mailErr) {
-        const message = mailErr instanceof Error ? mailErr.message : String(mailErr);
-        console.error('Nodemailer error:', message);
-        emailStatusMessage = `SMTP notice: ${message}. Inquiry still registered.`;
+        adminEmailSent = true;
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        console.error('Team notification email failed:', message);
+        notes.push(`Team notification failed: ${message}`);
       }
-    } else {
-      emailStatusMessage =
-        'Inquiry registered. (Configure GMAIL_USER & GMAIL_APP_PASSWORD in Vercel Environment Variables to enable live email dispatch).';
+
+      // 2) Thank-you email to the customer (separate, so one failure cannot hide the other).
+      if (customerEmailOk) {
+        try {
+          await transporter.sendMail({
+            from: sender,
+            to: email,
+            replyTo: teamInbox,
+            subject: `Thank you ${fullName}! Your Rangrez Holidays inquiry [${inquiryId}] has been received`,
+            html: buildGuestEmailHtml(fullName, packageName, startDate, phone, inquiryId, WHATSAPP_DISPLAY),
+            text: buildGuestEmailText(fullName, packageName, startDate, phone, inquiryId, WHATSAPP_DISPLAY),
+          });
+          guestEmailSent = true;
+        } catch (err) {
+          const message = err instanceof Error ? err.message : String(err);
+          console.error('Customer thank-you email failed:', message);
+          notes.push(`Customer confirmation failed: ${message}`);
+        }
+      } else {
+        notes.push('No valid customer email provided, so no confirmation email was sent.');
+      }
     }
+
+    const emailDispatched = adminEmailSent || guestEmailSent;
+    const emailStatusMessage = notes.length
+      ? notes.join(' ')
+      : 'Emails dispatched successfully via Gmail SMTP.';
 
     return NextResponse.json({
       success: true,
@@ -82,6 +110,8 @@ export async function POST(req: Request) {
       message:
         'Your inquiry has been successfully registered with Rangrez Holidays! Our travel expert will reach out promptly.',
       emailDispatched,
+      adminEmailSent,
+      guestEmailSent,
       emailStatusMessage,
       inquiry: {
         id: inquiryId,
