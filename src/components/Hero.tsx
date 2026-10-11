@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useId } from 'react';
 import { Calendar, Search, MapPin, Car, ArrowRight, Volume2, VolumeX, Play, Pause } from 'lucide-react';
 import { TOUR_PACKAGES } from '../data/toursData';
 import { TAXI_FLEET } from '../data/taxiData';
@@ -23,6 +23,7 @@ export const Hero: React.FC<HeroProps> = ({
   const [selectedTour, setSelectedTour] = useState<string>('golden-triangle-classic');
   // Set on the client after mount so server HTML and first client render match
   // (the server runs in UTC, the visitor's browser in their own timezone).
+  const fieldId = useId(); // links each <label> to its field for screen readers and AI agents
   const [travelDate, setTravelDate] = useState<string>('');
   useEffect(() => {
     setTravelDate(new Date(Date.now() + 86400000 * 3).toISOString().split('T')[0]);
@@ -159,11 +160,12 @@ export const Hero: React.FC<HeroProps> = ({
           <form onSubmit={handleQuickCheck} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Tour Selection */}
             <div>
-              <label className="block text-[11px] uppercase font-bold text-[#735467] tracking-wider mb-1.5 flex items-center gap-1">
+              <label htmlFor={`${fieldId}-tour`} className="block text-[11px] uppercase font-bold text-[#735467] tracking-wider mb-1.5 flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-[#F05A28]" />
                 <span>Destination / Tour</span>
               </label>
               <select
+                id={`${fieldId}-tour`}
                 value={selectedTour}
                 onChange={(e) => setSelectedTour(e.target.value)}
                 className="w-full bg-[#FAF4F8] border border-[#EADBDF] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#4A0E35] focus:outline-none focus:ring-2 focus:ring-[#F05A28]"
@@ -178,11 +180,12 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Travel Date */}
             <div>
-              <label className="block text-[11px] uppercase font-bold text-[#735467] tracking-wider mb-1.5 flex items-center gap-1">
+              <label htmlFor={`${fieldId}-date`} className="block text-[11px] uppercase font-bold text-[#735467] tracking-wider mb-1.5 flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5 text-[#F05A28]" />
                 <span>Preferred Date</span>
               </label>
               <input
+                id={`${fieldId}-date`}
                 type="date"
                 value={travelDate}
                 min={new Date().toISOString().split('T')[0]}
@@ -193,11 +196,12 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Vehicle Selection */}
             <div>
-              <label className="block text-[11px] uppercase font-bold text-[#735467] tracking-wider mb-1.5 flex items-center gap-1">
+              <label htmlFor={`${fieldId}-vehicle`} className="block text-[11px] uppercase font-bold text-[#735467] tracking-wider mb-1.5 flex items-center gap-1">
                 <Car className="w-3.5 h-3.5 text-[#F05A28]" />
                 <span>Chauffeur Vehicle</span>
               </label>
               <select
+                id={`${fieldId}-vehicle`}
                 value={vehicleType}
                 onChange={(e) => setVehicleType(e.target.value)}
                 className="w-full bg-[#FAF4F8] border border-[#EADBDF] rounded-xl px-3 py-2.5 text-xs font-semibold text-[#4A0E35] focus:outline-none focus:ring-2 focus:ring-[#F05A28]"
