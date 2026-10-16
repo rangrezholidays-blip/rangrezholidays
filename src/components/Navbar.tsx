@@ -142,14 +142,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </Link>
 
           <Link
-            href="/reviews"
+            href="/blogs/rajasthan-tour-package.html"
             className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
               isActive('/reviews')
                 ? 'text-[#F05A28] bg-[#FFF5EE]'
                 : 'text-[#4A0E35] hover:text-[#F05A28] hover:bg-[#FAF4F8]'
             }`}
           >
-            Guest Reviews & Reels
+            Blogs
           </Link>
 
           <Link

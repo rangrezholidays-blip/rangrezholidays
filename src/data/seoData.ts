@@ -66,7 +66,7 @@ export const TOUR_SEO: Record<string, SeoEntry> = {
     path: '/tour/golden-triangle-classic',
   },
   'rajasthan-royal-heritage': {
-    title: 'Grand Rajasthan Royal Heritage Tour | Rangrez Holidays',
+    title: 'Rajasthan Tour Package 10 Days: Jaipur to Udaipur | Rangrez',
     description:
       'Private Rajasthan tour through Jaipur, Jodhpur, Jaisalmer and Udaipur — desert havelis, forts, lakes, and luxury camping under the stars.',
     path: '/tour/rajasthan-royal-heritage',
@@ -78,9 +78,9 @@ export const TOUR_SEO: Record<string, SeoEntry> = {
     path: '/tour/char-dham-yatra-sacred',
   },
   'same-day-agra-taj-mahal': {
-    title: 'Same Day Taj Mahal Tour from Delhi | Rangrez Holidays',
+    title: 'Same Day Agra Tour from Delhi by Car or Train | Rangrez',
     description:
-      'Private same-day trip from Delhi to Agra — sunrise Taj Mahal, Agra Fort, chauffeur-driven round trip, flexible departure times.',
+      'Same day Taj Mahal tour from Delhi by private car or Gatimaan Express train. Taj Mahal, Agra Fort, chauffeur-driven round trip, flexible timings.',
     path: '/tour/same-day-agra-taj-mahal',
   },
   'same-day-delhi-heritage': {
@@ -90,7 +90,7 @@ export const TOUR_SEO: Record<string, SeoEntry> = {
     path: '/tour/same-day-delhi-heritage',
   },
   'same-day-jaipur-pink-city': {
-    title: 'Same Day Jaipur Tour from Delhi | Rangrez Holidays',
+    title: 'Jaipur One Day Tour from Delhi by Car | Rangrez Holidays',
     description:
       "Private same-day excursion from Delhi to Jaipur's Pink City — Amber Fort, City Palace, chauffeur-driven, comfortable round trip.",
     path: '/tour/same-day-jaipur-pink-city',
@@ -124,15 +124,15 @@ export const DESTINATION_SEO: Record<string, SeoEntry> = {
     path: '/destination/delhi',
   },
   agra: {
-    title: 'Agra & Taj Mahal Private Tours | Rangrez Holidays',
+    title: 'Taj Mahal Tour Packages from Delhi | Agra Tours | Rangrez',
     description:
       'Private Agra tours covering the Taj Mahal, Agra Fort, Fatehpur Sikri and the Baby Taj — chauffeur-driven, same-day or multi-day options.',
     path: '/destination/agra',
   },
   rajasthan: {
-    title: 'Rajasthan Private Tours & Travel Guide | Rangrez',
+    title: 'Rajasthan Tour Packages | Private & Family Trips | Rangrez',
     description:
-      'Private Rajasthan travel through Jaipur, Udaipur, Jodhpur and Jaisalmer — palaces, forts, lakes, and the Thar Desert, fully customizable.',
+      'Private Rajasthan tour packages covering Jaipur, Jodhpur, Jaisalmer and Udaipur. Chauffeur-driven and family-friendly, from ₹28,500 per person. Get a free quote.',
     path: '/destination/rajasthan',
   },
   uttarakhand: {

@@ -22,6 +22,14 @@ import { DESTINATIONS_DATA } from '../data/destinationsData';
 import { TOUR_PACKAGES } from '../data/toursData';
 import { TAXI_FLEET } from '../data/taxiData';
 import { useApp } from '../lib/app-context';
+import { SITE_URL } from '../data/seoData';
+
+// Keyword-focused main headings for destinations that target a "tour packages" search.
+// Any destination not listed here keeps its plain name as the h1.
+const H1_OVERRIDES: Record<string, string> = {
+  rajasthan: 'Rajasthan Tour Packages',
+  agra: 'Taj Mahal & Agra Tour Packages',
+};
 
 export const DestinationDetailPage: React.FC = () => {
   const { onOpenBooking } = useApp();
@@ -60,10 +68,24 @@ export const DestinationDetailPage: React.FC = () => {
   const matchedVehicles = TAXI_FLEET.slice(0, 3);
 
   const galleryImages = [destination.heroImage, ...(destination.gallery || [])];
+  const heading = H1_OVERRIDES[destination.id] ?? destination.name;
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Destinations', item: `${SITE_URL}/destinations` },
+      { '@type': 'ListItem', position: 3, name: destination.name, item: `${SITE_URL}/destination/${destination.id}` },
+    ],
+  };
 
 
   return (
     <div className="bg-[#FAF7F5] min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
 
       {/* Breadcrumbs */}
       <div className="bg-white border-b border-[#EADBDF] py-3 px-4 sm:px-6 lg:px-8">
@@ -85,7 +107,7 @@ export const DestinationDetailPage: React.FC = () => {
         <div className="absolute inset-0 z-0 opacity-45">
           <img
             src={destination.heroImage}
-            alt={destination.name}
+            alt={`${heading} - ${destination.tagline}`}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#200516]/95 via-[#200516]/75 to-transparent" />
@@ -99,7 +121,7 @@ export const DestinationDetailPage: React.FC = () => {
             </div>
 
             <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-              {destination.name}
+              {heading}
             </h1>
 
             <p className="mt-3 font-serif text-lg sm:text-xl text-[#FFA000] italic">
@@ -144,7 +166,7 @@ export const DestinationDetailPage: React.FC = () => {
               <div className="aspect-[16/9] w-full rounded-2xl overflow-hidden bg-black/5 relative">
                 <img
                   src={galleryImages[activeImageIndex] || destination.heroImage}
-                  alt={destination.name}
+                  alt={`${destination.name} photo ${activeImageIndex + 1}`}
                   className="w-full h-full object-cover transition-all duration-500"
                 />
               </div>
@@ -161,7 +183,7 @@ export const DestinationDetailPage: React.FC = () => {
                         : 'border-transparent opacity-70 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                    <img src={img} alt={`${destination.name} thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>
