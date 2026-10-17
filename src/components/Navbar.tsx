@@ -142,15 +142,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
           </Link>
 
           <Link
-            href="/rajasthan-tour-package.html"
+            href="/reviews"
             className={`px-3.5 py-2 rounded-xl text-xs font-bold transition-all ${
               isActive('/reviews')
                 ? 'text-[#F05A28] bg-[#FFF5EE]'
                 : 'text-[#4A0E35] hover:text-[#F05A28] hover:bg-[#FAF4F8]'
             }`}
           >
-            Blogs
+            Guest Reviews & Reels
           </Link>
+
+          {/* Blog pages are standalone static HTML, so a plain anchor is used */}
+          <a
+            href="/blog"
+            className="px-3.5 py-2 rounded-xl text-xs font-bold transition-all text-[#4A0E35] hover:text-[#F05A28] hover:bg-[#FAF4F8]"
+          >
+            Travel Blog
+          </a>
 
           <Link
             href="/contact"
@@ -273,6 +281,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             >
               Guest Reviews & Reels
             </Link>
+
+            <a
+              href="/blog"
+              className="text-left px-4 py-2.5 rounded-xl text-xs font-bold transition-colors text-[#4A0E35] hover:bg-[#FAF4F8]"
+            >
+              Travel Blog
+            </a>
 
             <Link
               href="/contact"

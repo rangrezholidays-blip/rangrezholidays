@@ -275,6 +275,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBooking }) => {
               AI Travel Guide (FAQs)
             </a>
             <span>•</span>
+            <a href="/blog" className="hover:text-white transition-colors">
+              Travel Blog
+            </a>
+            <span>•</span>
             <Link href="/reviews" className="hover:text-white transition-colors">
               Traveler Reviews
             </Link>
