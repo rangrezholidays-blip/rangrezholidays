@@ -59,7 +59,7 @@ export const WhatsAppChatWidget: React.FC<WhatsAppChatWidgetProps> = ({ onOpenBo
       customText ||
         'Namaste Rangrez Holidays! I am visiting your website and would like instant assistance with tour packages / taxi rental.'
     );
-    return `https://wa.me/919760402549?text=${query}`;
+    return `https://wa.me/918527221039?text=${query}`;
   };
 
   return (

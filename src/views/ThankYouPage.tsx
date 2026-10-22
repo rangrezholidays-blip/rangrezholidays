@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { CheckCircle2, MessageSquare, Phone, Mail, ArrowRight, Clock, Compass } from 'lucide-react';
 
-const WHATSAPP_NUMBER = '919760402549';
+const WHATSAPP_NUMBER = '918527221039';
 
 export const ThankYouPage: React.FC = () => {
   const searchParams = useSearchParams();

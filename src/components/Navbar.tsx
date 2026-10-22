@@ -175,7 +175,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         {/* Actions & Book Button */}
         <div className="hidden sm:flex items-center gap-3">
           <a
-            href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
+            href="https://wa.me/918527221039?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-emerald-500/40 text-emerald-700 hover:bg-emerald-50 text-xs font-bold transition-colors"
@@ -314,7 +314,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             </button>
 
             <a
-              href="https://wa.me/919760402549?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
+              href="https://wa.me/918527221039?text=Namaste%20Rangrez%20Holidays%2C%20I%20want%20to%20plan%20a%20trip."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl border border-emerald-500 text-emerald-700 font-bold text-xs bg-emerald-50/50"

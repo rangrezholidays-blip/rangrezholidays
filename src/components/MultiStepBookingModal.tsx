@@ -167,7 +167,7 @@ export const MultiStepBookingModal: React.FC<MultiStepBookingModalProps> = ({
       `👤 Guest Name: ${formData.fullName}\n` +
       `📍 Pickup: ${formData.pickupLocation}`
     );
-    return `https://wa.me/919760402549?text=${text}`;
+    return `https://wa.me/918527221039?text=${text}`;
   };
 
   return (

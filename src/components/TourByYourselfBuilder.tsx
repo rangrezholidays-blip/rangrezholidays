@@ -204,7 +204,7 @@ export const TourByYourselfBuilder: React.FC<TourByYourselfBuilderProps> = ({
         `• Travel Date: ${startDate || 'Flexible / Upcoming month'}\n\n` +
         `Please send me an official itinerary proposal and best package quote!`
     );
-    window.open(`https://wa.me/919760402549?text=${text}`, '_blank');
+    window.open(`https://wa.me/918527221039?text=${text}`, '_blank');
   };
 
   return (
