@@ -1,7 +1,4 @@
 import { CustomerReview, InstaReel } from '../types';
-import delhi from '../assets/delhi.mp4';
-import rajasthan from '../assets/rajasthan.mp4';
-import tajmahal from '../assets/tajmahal.mp4';
 
 export const CUSTOMER_REVIEWS: CustomerReview[] = [
   {
