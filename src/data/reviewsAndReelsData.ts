@@ -1,5 +1,4 @@
 import { CustomerReview, InstaReel } from '../types';
-import goldenTriangleVideo from '../assets/golden_traingle.mp4';
 import delhi from '../assets/delhi.mp4';
 import rajasthan from '../assets/rajasthan.mp4';
 import tajmahal from '../assets/tajmahal.mp4';
@@ -93,7 +92,7 @@ export const INSTA_REELS: InstaReel[] = [
     views: '248K',
     likes: '34.2K',
     thumbnail: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=800&auto=format&fit=crop',
-    videoUrl: goldenTriangleVideo,
+    videoUrl: "/golden_triangle.mp4",
     caption: 'Standing in total silence as the first golden sunbeams touch the ivory dome of Taj Mahal. Thank you @rangrezholidays for getting us here before the gates opened! 🧡',
     tourTag: 'Golden Triangle Tour',
   },
@@ -105,7 +104,7 @@ export const INSTA_REELS: InstaReel[] = [
     views: '189K',
     likes: '26.8K',
     thumbnail: 'https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop',
-    videoUrl: 'https://res.cloudinary.com/demo/video/upload/c_fill,h_720,w_405,q_auto/horses.mp4',
+    videoUrl: '/rajasthan.mp4',
     caption: 'Folk Kalbelia songs echoing across golden sand dunes under a trillion stars. Pure magic arranged by Rangrez Holidays desert camp! 🏜️⭐',
     tourTag: 'Rajasthan Royalty',
   },
@@ -117,7 +116,7 @@ export const INSTA_REELS: InstaReel[] = [
     views: '512K',
     likes: '89.4K',
     thumbnail: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=800&auto=format&fit=crop',
-    videoUrl: 'https://res.cloudinary.com/demo/video/upload/c_fill,h_720,w_405,q_auto/snow_horses.mp4',
+    videoUrl: '/tajmahal.mp4',
     caption: 'Gliding past snow-draped Himalayan crags straight into the spiritual vortex of Kedarnath Dham. Chills everywhere! Har Har Mahadev 🙏',
     tourTag: 'Char Dham Yatra',
   },
@@ -129,7 +128,7 @@ export const INSTA_REELS: InstaReel[] = [
     views: '340K',
     likes: '45.1K',
     thumbnail: 'https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?q=80&w=800&auto=format&fit=crop',
-    videoUrl: 'https://res.cloudinary.com/demo/video/upload/c_fill,h_720,w_405,q_auto/sea_turtle.mp4',
+    videoUrl: 'delhi.mp4',
     caption: 'Sipping saffron spiced tea while gliding past the illuminated arches of Jag Mandir Palace in Udaipur. Royalty reimagined by @rangrezholidays! 👑',
     tourTag: 'Udaipur Lake Tour',
   },
